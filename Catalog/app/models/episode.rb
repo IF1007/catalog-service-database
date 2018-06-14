@@ -1,7 +1,7 @@
 class Episode < ApplicationRecord
-  belongs_to :serie
+  belongs_to :season
   has_many :progresses
   has_many :viewers, through: :progresses
 
-  validates :episode_number, presence: true
+  validates :episode_number, :title, presence: true
 end

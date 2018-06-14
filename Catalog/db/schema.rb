@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180613021836) do
+ActiveRecord::Schema.define(version: 20180614011659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,9 +27,11 @@ ActiveRecord::Schema.define(version: 20180613021836) do
   create_table "episodes", force: :cascade do |t|
     t.string "title"
     t.integer "episode_number", null: false
+    t.bigint "season_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["episode_number"], name: "index_episodes_on_episode_number"
+    t.index ["season_id"], name: "index_episodes_on_season_id"
     t.index ["title"], name: "index_episodes_on_title"
   end
 
@@ -64,11 +66,10 @@ ActiveRecord::Schema.define(version: 20180613021836) do
 
   create_table "seasons", force: :cascade do |t|
     t.bigint "serie_id"
-    t.bigint "episode_id"
     t.integer "season_number", null: false
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["episode_id"], name: "index_seasons_on_episode_id"
     t.index ["season_number"], name: "index_seasons_on_season_number"
     t.index ["serie_id"], name: "index_seasons_on_serie_id"
   end

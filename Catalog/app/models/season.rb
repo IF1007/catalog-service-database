@@ -1,5 +1,5 @@
 class Season < ApplicationRecord
-  belongs_to :episode
   belongs_to :serie
-  validates :season_number, presence: true
+  has_many :episodes
+  validates :season_number, :title, presence: true
 end
