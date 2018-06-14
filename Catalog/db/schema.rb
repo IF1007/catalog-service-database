@@ -56,12 +56,12 @@ ActiveRecord::Schema.define(version: 20180614011659) do
   end
 
   create_table "progresses", force: :cascade do |t|
-    t.string "user_id", null: false
+    t.bigint "viewer_id"
     t.bigint "episode_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["episode_id"], name: "index_progresses_on_episode_id"
-    t.index ["user_id"], name: "index_progresses_on_user_id"
+    t.index ["viewer_id"], name: "index_progresses_on_viewer_id"
   end
 
   create_table "seasons", force: :cascade do |t|

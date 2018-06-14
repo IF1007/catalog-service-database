@@ -8,7 +8,7 @@ class Api::ViewersController < Api::ApiController
 
   protected
   def find_serie
-    @serie = Serie.find_by! id: params[:serie_id]
+    Serie.find_by! id: params[:serie_id]
   end
 
   def viewer_params
