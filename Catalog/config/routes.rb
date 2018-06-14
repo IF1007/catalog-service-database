@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: "json" } do
     resources :profiles, only: [:create, :show, :update]
     resources :series, only: [:create, :show]
+    resources :viewers, only: [:create]
+    resources :progresses, only: [:create]
   end
 end
