@@ -17,11 +17,11 @@ class Api::ProfilesController < Api::ApiController
 
   protected
   def find_profile
-    @profile = Profile.find_by! user_id: params[:user_id], id: params[:id]
+    @profile = Profile.find_by! user_id: @user_id, id: params[:id]
   end
 
   def profile_params
-    params.require(:profile).permit(:user_id, :birthday, :about)
+    params.require(:profile).permit(:birthday, :about).merge(user_id: @user_id)
   end
 
   def update_profile_params

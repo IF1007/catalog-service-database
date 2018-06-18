@@ -1,4 +1,6 @@
 class Api::ApiController < ApplicationController
+  include Auth
+
   rescue_from ActiveRecord::RecordInvalid, with: :invalid_record
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
