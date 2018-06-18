@@ -2,7 +2,7 @@ module Auth
   extend ActiveSupport::Concern
 
   # signed requests
-  USER_TOKEN_ID = 'ID'
+  USER_TOKEN_ID = 'Id'
 
   included do
     before_action :identify_requester
