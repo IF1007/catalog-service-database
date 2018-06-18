@@ -1,6 +1,10 @@
 class Api::SeriesController < Api::ApiController
   before_action :find_serie, only: [:show]
 
+  def index
+    @series = Serie.all
+  end
+
   def create
     Serie.transaction do
       @serie = Serie.create!(serie_params)
