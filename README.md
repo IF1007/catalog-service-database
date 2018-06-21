@@ -1,5 +1,5 @@
 # Catalog Service Database
-CRUD Service of [catalog service](https://github.com/ahlp/catalog-service)
+CRUD Service of [catalog service](https://github.com/ahlp/catalog-service) in Ruby
 
 # How To Build
 
@@ -9,16 +9,16 @@ CRUD Service of [catalog service](https://github.com/ahlp/catalog-service)
  - docker run -p 3000:3000 --link csd-crudb:csd-crudb --name app_container csd-crud
 
 # Dependencies
- 
- - 'rails', '~> 5.1.4'
- - 'pg', '~> 0.18'
- - 'puma', '~> 3.7'
- - 'jbuilder', '~> 2.5'
- - 'rack-cors'
- - 'exception_notification'
- - 'httparty'
- - 'dragonfly', '~> 1.1.5'
- - 'tzinfo-data'
+ - https://www.ruby-lang.org/
+ - rails ~> 5.1.4
+ - pg ~> 0.18
+ - puma ~> 3.7
+ - jbuilder ~> 2.5
+ - rack-cors
+ - exception_notification
+ - httparty
+ - dragonfly ~> 1.1.5
+ - tzinfodata
 
 ### useful link
 
