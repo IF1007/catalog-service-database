@@ -24,10 +24,10 @@ class Api::ProfilesController < Api::ApiController
   end
 
   def profile_params
-    params.require(:profile).permit(:birthday, :about).merge(user_id: @user_id)
+    params.require(:profile).permit(:birthday, :about, :name, :avatar_link).merge(user_id: @user_id)
   end
 
   def update_profile_params
-    params.require(:profile).permit(:birthday, :about)
+    params.require(:profile).permit(:birthday, :about, :name, :avatar_link)
   end
 end
