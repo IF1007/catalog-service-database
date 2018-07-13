@@ -1,3 +1,4 @@
+require 'jwt'
 module Auth
   extend ActiveSupport::Concern
 
@@ -6,11 +7,14 @@ module Auth
   end
 
   def identify_requester
-    url = params[:controller]
-    http_method = request.request_method.downcase
     header = request.headers['Id']
     if header.present?
-      @user_id = header
+      decoded_token = JWT.decode header, ENV['TOKEN_KEY'], true, { :algorithm => 'HS256' }
+      if decoded_token[0].present? && decoded_token[0]['id'].present?
+        @profile = Profile.find_by! id: decoded_token[0]['id']
+      else
+        raise ActiveRecord::RecordNotFound
+      end
     else
       raise ActiveRecord::RecordNotFound
     end

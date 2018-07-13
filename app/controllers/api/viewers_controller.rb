@@ -12,6 +12,6 @@ class Api::ViewersController < Api::ApiController
   end
 
   def viewer_params
-    params.require(:viewer).permit(:status, :serie_id).merge(user_id: @user_id)
+    params.require(:viewer).permit(:status, :serie_id).merge(profile_id: @profile.id)
   end
 end

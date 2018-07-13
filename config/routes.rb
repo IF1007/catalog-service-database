@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :viewers, only: [:create]
     resources :progresses, only: [:create]
     resources :episodes, only: [:index]
-
     resource :historic, only: [:show]
   end
 

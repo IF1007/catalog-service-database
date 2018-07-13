@@ -6,7 +6,7 @@ class Api::HistoricsController < Api::ApiController
 
   protected
   def find_viewer
-    @viewers = Viewer.where(user_id: @user_id).limit(3)
-    @viewer_watching = Viewer.where(user_id: @user_id, status: 'watching')
+    @viewers = Viewer.where(profile: @profile).limit(3)
+    @viewer_watching = Viewer.where(profile: @profile, status: 'watching')
   end
 end
