@@ -9,4 +9,9 @@ Rails.application.routes.draw do
 
     resource :historic, only: [:show]
   end
+
+  namespace :public, defaults: { format: "json" } do
+    resource :authenticate, only: [:create]
+    resources :registrations, only: [:create]
+  end
 end
