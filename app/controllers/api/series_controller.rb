@@ -28,6 +28,6 @@ class Api::SeriesController < Api::ApiController
   end
 
   def serie_params
-    params.require(:serie).permit(:title, :about, :launch_date)
+    params.require(:serie).permit(:title, :about, :launch_date, :poster_link)
   end
 end

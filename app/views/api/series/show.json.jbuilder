@@ -1,5 +1,5 @@
 json.serie do
-  json.extract! @serie, :id, :title, :launch_date, :about
+  json.extract! @serie, :id, :title, :launch_date, :about, :poster_link
   json.seasons @serie.seasons do |season|
     json.extract! season, :id, :season_number, :title
     json.episodes season.episodes do |episode|

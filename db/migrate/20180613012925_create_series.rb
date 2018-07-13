@@ -4,6 +4,7 @@ class CreateSeries < ActiveRecord::Migration[5.1]
       t.string :title, null: false, index: true
       t.string :about
       t.string :launch_date
+      t.string :poster_link
       t.timestamps
     end
   end
