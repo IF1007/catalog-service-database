@@ -1,5 +1,5 @@
 json.profile do
-	json.extract! @profile, :id, :about, :birthday
+	json.extract! @profile, :about, :birthday, :name, :email, :avatar_link
   json.later @later do |viewer|
     json.extract! viewer, :id, :status
     json.serie do

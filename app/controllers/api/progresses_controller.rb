@@ -9,11 +9,12 @@ class Api::ProgressesController < Api::ApiController
   protected
 
   def find_episode
-    Episode.find_by! id: params[:episode_id]
-    Viewer.find_by! id: params[:viewer_id]
+    @episode = Episode.find_by! id: params[:episode_id]
+    serie = @episode.season.serie
+    @viewer = @profile.viewers.where(serie: serie).first
   end
 
   def progress_params
-    params.require(:progress).permit(:viewer_id, :episode_id)
+    params.require(:progress).permit(:episode_id).merge(viewer_id: @viewer.id)
   end
 end

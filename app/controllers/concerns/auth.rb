@@ -13,10 +13,10 @@ module Auth
       if decoded_token[0].present? && decoded_token[0]['id'].present?
         @profile = Profile.find_by! id: decoded_token[0]['id']
       else
-        raise ActiveRecord::RecordNotFound
+        head :forbidden
       end
     else
-      raise ActiveRecord::RecordNotFound
+      head :forbidden
     end
   end
 

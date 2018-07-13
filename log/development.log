@@ -6380,3 +6380,350 @@ Unpermitted parameters: :format, :authenticate
 Completed 200 OK in 219ms (Views: 0.3ms | ActiveRecord: 11.7ms)
 
 
+Started PUT "/api/profiles" for 127.0.0.1 at 2018-07-12 23:20:24 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [PUT] "/api/profiles"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+dragonfly (1.1.5) lib/dragonfly/cookie_monster.rb:9:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/api/profiles" for 127.0.0.1 at 2018-07-12 23:21:24 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [PUT] "/api/profiles"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+dragonfly (1.1.5) lib/dragonfly/cookie_monster.rb:9:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/api/profile" for 127.0.0.1 at 2018-07-12 23:21:48 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProfilesController#update as JSON
+  Parameters: {"profile"=>{"birthday"=>"02/02/1980", "about"=>"Lorem ipsum dolor sit amet. Phasellus rhoncus.", "name"=>"Ryan Douglas", "email"=>"ryan.douglas11@example.com", "avatar_link"=>"https://randomuser.me/api/portraits/men/41.jpg", "password"=>"[FILTERED]"}}
+Completed 404 Not Found in 1ms (Views: 0.3ms | ActiveRecord: 3.8ms)
+
+
+Started PUT "/api/profile" for 127.0.0.1 at 2018-07-12 23:23:26 -0300
+Started PUT "/api/profile" for 127.0.0.1 at 2018-07-12 23:24:16 -0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProfilesController#update as JSON
+  Parameters: {"profile"=>{"birthday"=>"02/02/1980", "about"=>"Lorem ipsum dolor sit amet. Phasellus rhoncus.", "name"=>"Ryan Douglas", "email"=>"ryan.douglas11@example.com", "avatar_link"=>"https://randomuser.me/api/portraits/men/41.jpg", "password"=>"[FILTERED]"}}
+Filter chain halted as :identify_requester rendered or redirected
+Completed 403 Forbidden in 1ms (ActiveRecord: 3.9ms)
+
+
+Started PUT "/api/profile" for 127.0.0.1 at 2018-07-12 23:24:41 -0300
+Processing by Api::ProfilesController#update as JSON
+  Parameters: {"profile"=>{"birthday"=>"02/02/1980", "about"=>"Lorem ipsum dolor sit amet. Phasellus rhoncus.", "name"=>"Ryan Douglas", "email"=>"ryan.douglas11@example.com", "avatar_link"=>"https://randomuser.me/api/portraits/men/41.jpg", "password"=>"[FILTERED]"}}
+  [1m[36mProfile Load (1.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: :email, :password
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfile Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE LOWER("profiles"."email") = LOWER($1) AND ("profiles"."id" != $2) LIMIT $3[0m  [["email", "ryan.douglas11@example.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "profiles" SET "about" = $1, "updated_at" = $2 WHERE "profiles"."id" = $3[0m  [["about", "Lorem ipsum dolor sit amet. Phasellus rhoncus."], ["updated_at", "2018-07-13 02:24:41.469250"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/profiles/show.json.jbuilder
+  Rendered api/profiles/show.json.jbuilder (7.9ms)
+Completed 200 OK in 150ms (Views: 22.1ms | ActiveRecord: 40.8ms)
+
+
+Started GET "/api/profile" for 127.0.0.1 at 2018-07-12 23:26:21 -0300
+Processing by Api::ProfilesController#show as JSON
+Filter chain halted as :identify_requester rendered or redirected
+Completed 403 Forbidden in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/api/profile" for 127.0.0.1 at 2018-07-12 23:26:33 -0300
+Processing by Api::ProfilesController#show as JSON
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/profiles/show.json.jbuilder
+  [1m[36mViewer Load (4.6ms)[0m  [1m[34mSELECT "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = 1 AND "viewers"."status" = $1[0m  [["status", "watch_later"]]
+  [1m[36mViewer Load (1.4ms)[0m  [1m[34mSELECT "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = 1 AND "viewers"."status" = $1[0m  [["status", "watched"]]
+  Rendered api/profiles/show.json.jbuilder (12.7ms)
+Completed 200 OK in 66ms (Views: 9.4ms | ActiveRecord: 17.3ms)
+
+
+Started POST "/api/series" for 127.0.0.1 at 2018-07-12 23:26:57 -0300
+Processing by Api::SeriesController#create as JSON
+  Parameters: {"serie"=>{"title"=>"Secret Garden", "launch_date"=>"13/11/2010", "about"=>"A rationalizing Cinderella story between Gil Ra-im (Ha Ji-won), a stuntwoman, and Kim Joo-won (Hyun Bin), a high-end department store CEO.", "number_of_seasons"=>1, "episodes_per_season"=>20}, "series"=>{"serie"=>{"title"=>"Secret Garden", "launch_date"=>"13/11/2010", "about"=>"A rationalizing Cinderella story between Gil Ra-im (Ha Ji-won), a stuntwoman, and Kim Joo-won (Hyun Bin), a high-end department store CEO.", "number_of_seasons"=>1, "episodes_per_season"=>20}}}
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Unpermitted parameters: :number_of_seasons, :episodes_per_season
+  [1m[35mSQL (5.6ms)[0m  [1m[32mINSERT INTO "series" ("title", "about", "launch_date", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Secret Garden"], ["about", "A rationalizing Cinderella story between Gil Ra-im (Ha Ji-won), a stuntwoman, and Kim Joo-won (Hyun Bin), a high-end department store CEO."], ["launch_date", "13/11/2010"], ["created_at", "2018-07-13 02:26:57.933091"], ["updated_at", "2018-07-13 02:26:57.933091"]]
+  [1m[36mSerie Load (1.6ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "seasons" ("serie_id", "season_number", "title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["serie_id", 1], ["season_number", 1], ["title", "Temporada 1"], ["created_at", "2018-07-13 02:26:58.022892"], ["updated_at", "2018-07-13 02:26:58.022892"]]
+  [1m[36mSeason Load (0.5ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 1"], ["episode_number", 1], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.051173"], ["updated_at", "2018-07-13 02:26:58.051173"]]
+  [1m[36mSeason Load (0.3ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 2"], ["episode_number", 2], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.063780"], ["updated_at", "2018-07-13 02:26:58.063780"]]
+  [1m[36mSeason Load (1.4ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 3"], ["episode_number", 3], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.073411"], ["updated_at", "2018-07-13 02:26:58.073411"]]
+  [1m[36mSeason Load (0.3ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 4"], ["episode_number", 4], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.079425"], ["updated_at", "2018-07-13 02:26:58.079425"]]
+  [1m[36mSeason Load (0.3ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 5"], ["episode_number", 5], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.082681"], ["updated_at", "2018-07-13 02:26:58.082681"]]
+  [1m[36mSeason Load (0.9ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 6"], ["episode_number", 6], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.090856"], ["updated_at", "2018-07-13 02:26:58.090856"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 7"], ["episode_number", 7], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.093689"], ["updated_at", "2018-07-13 02:26:58.093689"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 8"], ["episode_number", 8], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.096011"], ["updated_at", "2018-07-13 02:26:58.096011"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 9"], ["episode_number", 9], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.098589"], ["updated_at", "2018-07-13 02:26:58.098589"]]
+  [1m[36mSeason Load (0.4ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 10"], ["episode_number", 10], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.107600"], ["updated_at", "2018-07-13 02:26:58.107600"]]
+  [1m[36mSeason Load (0.4ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 11"], ["episode_number", 11], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.115503"], ["updated_at", "2018-07-13 02:26:58.115503"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 12"], ["episode_number", 12], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.120509"], ["updated_at", "2018-07-13 02:26:58.120509"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 13"], ["episode_number", 13], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.125760"], ["updated_at", "2018-07-13 02:26:58.125760"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 14"], ["episode_number", 14], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.128057"], ["updated_at", "2018-07-13 02:26:58.128057"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 15"], ["episode_number", 15], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.130300"], ["updated_at", "2018-07-13 02:26:58.130300"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 16"], ["episode_number", 16], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.135054"], ["updated_at", "2018-07-13 02:26:58.135054"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 17"], ["episode_number", 17], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.138009"], ["updated_at", "2018-07-13 02:26:58.138009"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 18"], ["episode_number", 18], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.140420"], ["updated_at", "2018-07-13 02:26:58.140420"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 19"], ["episode_number", 19], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.142767"], ["updated_at", "2018-07-13 02:26:58.142767"]]
+  [1m[36mSeason Load (0.2ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "episodes" ("title", "episode_number", "season_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Episódio 20"], ["episode_number", 20], ["season_id", 1], ["created_at", "2018-07-13 02:26:58.145157"], ["updated_at", "2018-07-13 02:26:58.145157"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/series/show.json.jbuilder
+  [1m[36mSeason Load (0.7ms)[0m  [1m[34mSELECT "seasons".* FROM "seasons" WHERE "seasons"."serie_id" = $1[0m  [["serie_id", 1]]
+  [1m[36mEpisode Load (0.6ms)[0m  [1m[34mSELECT "episodes".* FROM "episodes" WHERE "episodes"."season_id" = $1[0m  [["season_id", 1]]
+  Rendered api/series/show.json.jbuilder (20.9ms)
+Completed 201 Created in 281ms (Views: 27.3ms | ActiveRecord: 58.4ms)
+
+
+Started GET "/api/series/1" for 127.0.0.1 at 2018-07-12 23:27:11 -0300
+Processing by Api::SeriesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (0.5ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/series/show.json.jbuilder
+  [1m[36mSeason Load (1.0ms)[0m  [1m[34mSELECT "seasons".* FROM "seasons" WHERE "seasons"."serie_id" = $1[0m  [["serie_id", 1]]
+  [1m[36mEpisode Load (0.7ms)[0m  [1m[34mSELECT "episodes".* FROM "episodes" WHERE "episodes"."season_id" = $1[0m  [["season_id", 1]]
+  Rendered api/series/show.json.jbuilder (11.9ms)
+Completed 200 OK in 21ms (Views: 13.1ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/api/viewers" for 127.0.0.1 at 2018-07-12 23:27:52 -0300
+Processing by Api::ViewersController#create as JSON
+  Parameters: {"serie_id"=>1, "status"=>"watched", "viewer"=>{"serie_id"=>1, "status"=>"watched"}}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (0.3ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "viewers" ("serie_id", "profile_id", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["serie_id", 1], ["profile_id", 1], ["status", "watched"], ["created_at", "2018-07-13 02:27:52.962037"], ["updated_at", "2018-07-13 02:27:52.962037"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/viewers/show.json.jbuilder
+  Rendered api/viewers/show.json.jbuilder (0.5ms)
+Completed 201 Created in 33ms (Views: 3.0ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/api/progresses" for 127.0.0.1 at 2018-07-12 23:30:32 -0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProgressesController#create as JSON
+  Parameters: {"episode_id"=>13, "progress"=>{"episode_id"=>13}}
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEpisode Load (0.8ms)[0m  [1m[34mSELECT  "episodes".* FROM "episodes" WHERE "episodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 16.0ms)
+
+
+  
+NoMethodError (undefined method `viewers' for #<Class:0x007fa7c41b2e98>):
+  
+app/controllers/api/progresses_controller.rb:13:in `find_episode'
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mViewer Load (0.6ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = $1 LIMIT $2[0m  [["profile_id", 1], ["LIMIT", 11]]
+  [1m[36mViewer Load (0.5ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = $1 LIMIT $2[0m  [["profile_id", 1], ["LIMIT", 11]]
+  [1m[36mEpisode Load (0.6ms)[0m  [1m[34mSELECT  "episodes".* FROM "episodes" ORDER BY "episodes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEpisode Load (0.5ms)[0m  [1m[34mSELECT  "episodes".* FROM "episodes" ORDER BY "episodes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mEpisode Load (0.4ms)[0m  [1m[34mSELECT  "episodes".* FROM "episodes" ORDER BY "episodes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSeason Load (0.6ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (0.4ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started POST "/api/progresses" for 127.0.0.1 at 2018-07-12 23:36:20 -0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProgressesController#create as JSON
+  Parameters: {"episode_id"=>13, "progress"=>{"episode_id"=>13}}
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEpisode Load (0.5ms)[0m  [1m[34mSELECT  "episodes".* FROM "episodes" WHERE "episodes"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mSeason Load (1.1ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (0.5ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 164ms (ActiveRecord: 25.5ms)
+
+
+  
+NoMethodError (undefined method `viewers' for #<Class:0x007f9a029b7f78>):
+  
+app/controllers/api/progresses_controller.rb:14:in `find_episode'
+Started POST "/api/progresses" for 127.0.0.1 at 2018-07-12 23:36:47 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProgressesController#create as JSON
+  Parameters: {"episode_id"=>1, "progress"=>{"episode_id"=>1}}
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEpisode Load (0.6ms)[0m  [1m[34mSELECT  "episodes".* FROM "episodes" WHERE "episodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSeason Load (0.5ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (0.5ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 29.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/api/progresses_controller.rb:18:in `progress_params'
+app/controllers/api/progresses_controller.rb:5:in `create'
+Started POST "/api/progresses" for 127.0.0.1 at 2018-07-12 23:37:10 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProgressesController#create as JSON
+  Parameters: {"episode_id"=>1, "progress"=>{"episode_id"=>1}}
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEpisode Load (1.0ms)[0m  [1m[34mSELECT  "episodes".* FROM "episodes" WHERE "episodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSeason Load (0.5ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (0.6ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mViewer Load (0.6ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = $1 AND "viewers"."serie_id" = 1 LIMIT $2[0m  [["profile_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 225ms (ActiveRecord: 36.0ms)
+
+
+  
+  [1m[36mViewer Load (0.4ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = $1 AND "viewers"."serie_id" = 1 LIMIT $2[0m  [["profile_id", 1], ["LIMIT", 11]]
+NoMethodError (undefined method `id' for #<Viewer::ActiveRecord_AssociationRelation:0x007fc352d22068>
+Did you mean?  ids):
+  
+app/controllers/api/progresses_controller.rb:18:in `progress_params'
+app/controllers/api/progresses_controller.rb:5:in `create'
+  [1m[36mViewer Load (0.4ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = $1 AND "viewers"."serie_id" = 1 LIMIT $2[0m  [["profile_id", 1], ["LIMIT", 11]]
+Started POST "/api/progresses" for 127.0.0.1 at 2018-07-12 23:37:24 -0300
+Started POST "/api/progresses" for 127.0.0.1 at 2018-07-12 23:37:49 -0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::ProgressesController#create as JSON
+  Parameters: {"episode_id"=>1, "progress"=>{"episode_id"=>1}}
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEpisode Load (0.6ms)[0m  [1m[34mSELECT  "episodes".* FROM "episodes" WHERE "episodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSeason Load (0.6ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (1.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mViewer Load (1.3ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = $1 AND "viewers"."serie_id" = 1 ORDER BY "viewers"."id" ASC LIMIT $2[0m  [["profile_id", 1], ["LIMIT", 1]]
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mEpisode Load (0.3ms)[0m  [1m[34mSELECT  "episodes".* FROM "episodes" WHERE "episodes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mViewer Load (0.3ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "progresses" ("viewer_id", "episode_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["viewer_id", 1], ["episode_id", 1], ["created_at", "2018-07-13 02:37:49.899388"], ["updated_at", "2018-07-13 02:37:49.899388"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 245ms (ActiveRecord: 41.4ms)
+
+
+Started GET "/api/episodes" for 127.0.0.1 at 2018-07-12 23:38:35 -0300
+Processing by Api::EpisodesController#index as JSON
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/episodes/index.json.jbuilder
+  [1m[36mEpisode Load (1.3ms)[0m  [1m[34mSELECT "episodes".* FROM "episodes"[0m
+  [1m[36mSeason Load (0.6ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (1.1ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Season Load (0.0ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Serie Load (0.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/episodes/index.json.jbuilder (46.9ms)
+Completed 200 OK in 76ms (Views: 48.9ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/api/historic" for 127.0.0.1 at 2018-07-12 23:39:06 -0300
+Processing by Api::HistoricsController#show as JSON
+  [1m[36mProfile Load (1.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/historics/show.json.jbuilder
+  [1m[36mViewer Load (0.9ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = 1 LIMIT $1[0m  [["LIMIT", 3]]
+  [1m[36mSerie Load (0.3ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mViewer Load (1.2ms)[0m  [1m[34mSELECT "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = 1 AND "viewers"."status" = $1[0m  [["status", "watching"]]
+  Rendered api/historics/show.json.jbuilder (6.0ms)
+Completed 200 OK in 17ms (Views: 5.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/series" for 127.0.0.1 at 2018-07-12 23:39:15 -0300
+Processing by Api::SeriesController#index as JSON
+  [1m[36mProfile Load (1.2ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/series/index.json.jbuilder
+  [1m[36mSerie Load (1.4ms)[0m  [1m[34mSELECT "series".* FROM "series"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "seasons" WHERE "seasons"."serie_id" = $1[0m  [["serie_id", 1]]
+  Rendered api/series/index.json.jbuilder (9.8ms)
+Completed 200 OK in 24ms (Views: 11.3ms | ActiveRecord: 3.8ms)
+
+
