@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20180614011659) do
     t.string "email"
     t.string "birthday"
     t.string "about"
+    t.string "avatar_link"
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

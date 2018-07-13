@@ -22,6 +22,6 @@ class Public::AuthenticatesController < Public::ApiController
   end
 
   def profile_params
-    params.require(:profile).permit(:email, :password)
+    params.permit(:email, :password)
   end
 end

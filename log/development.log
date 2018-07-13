@@ -6185,3 +6185,198 @@ Migrating to CreateProgresses (20180614011659)
   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8540508002675814480)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/public/registrations" for 127.0.0.1 at 2018-07-12 23:07:58 -0300
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Public::RegistrationsController#create as JSON
+  Parameters: {"profile"=>{"birthday"=>"19/02/1999", "about"=>"Sou uma pessoa que queria estar dormindo", "name"=>"Marcia Costa", "email"=>"marcia.costa@example.com"}, "registration"=>{"profile"=>{"birthday"=>"19/02/1999", "about"=>"Sou uma pessoa que queria estar dormindo", "name"=>"Marcia Costa", "email"=>"marcia.costa@example.com"}}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant User):
+  
+app/controllers/public/registrations_controller.rb:5:in `create'
+Started POST "/public/registrations" for 127.0.0.1 at 2018-07-12 23:08:22 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Public::RegistrationsController#create as JSON
+  Parameters: {"profile"=>{"birthday"=>"19/02/1999", "about"=>"Sou uma pessoa que queria estar dormindo", "name"=>"Marcia Costa", "email"=>"marcia.costa@example.com"}, "registration"=>{"profile"=>{"birthday"=>"19/02/1999", "about"=>"Sou uma pessoa que queria estar dormindo", "name"=>"Marcia Costa", "email"=>"marcia.costa@example.com"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfile Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."email" = $1 AND "profiles"."provider" = $2 LIMIT $3[0m  [["email", "marcia.costa@example.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 9.7ms)
+
+
+  
+NoMethodError (undefined method `user_id' for #<Profile:0x007fc30de4e5a8>):
+  
+app/controllers/public/registrations_controller.rb:5:in `create'
+Started POST "/public/registrations" for 127.0.0.1 at 2018-07-12 23:10:18 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Public::RegistrationsController#create as JSON
+  Parameters: {"profile"=>{"birthday"=>"19/02/1999", "about"=>"Sou uma pessoa que queria estar dormindo", "name"=>"Marcia Costa", "email"=>"marcia.costa@example.com"}, "registration"=>{"profile"=>{"birthday"=>"19/02/1999", "about"=>"Sou uma pessoa que queria estar dormindo", "name"=>"Marcia Costa", "email"=>"marcia.costa@example.com"}}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfile Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."email" = $1 AND "profiles"."provider" = $2 LIMIT $3[0m  [["email", "marcia.costa@example.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mProfile Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE LOWER("profiles"."email") = LOWER($1) LIMIT $2[0m  [["email", "marcia.costa@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "profiles" ("uid", "name", "email", "birthday", "about", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["uid", "marcia.costa@example.com"], ["name", "Marcia Costa"], ["email", "marcia.costa@example.com"], ["birthday", "19/02/1999"], ["about", "Sou uma pessoa que queria estar dormindo"], ["tokens", "{}"], ["created_at", "2018-07-13 02:10:19.488866"], ["updated_at", "2018-07-13 02:10:19.488866"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 88ms (Views: 0.3ms | ActiveRecord: 17.3ms)
+
+
+Started GET "/public/registrations" for 127.0.0.1 at 2018-07-12 23:11:38 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/public/registrations"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+dragonfly (1.1.5) lib/dragonfly/cookie_monster.rb:9:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/public/registrations" for 127.0.0.1 at 2018-07-12 23:15:06 -0300
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Public::RegistrationsController#create as JSON
+  Parameters: {"profile"=>{"birthday"=>"02/02/1980", "about"=>"Lorem ipsum dolor sit amet.", "name"=>"Ryan Douglas", "email"=>"ryan.douglas11@example.com", "avatar_link"=>"https://randomuser.me/api/portraits/men/41.jpg", "password"=>"[FILTERED]"}, "registration"=>{"profile"=>{"birthday"=>"02/02/1980", "about"=>"Lorem ipsum dolor sit amet.", "name"=>"Ryan Douglas", "email"=>"ryan.douglas11@example.com", "avatar_link"=>"https://randomuser.me/api/portraits/men/41.jpg", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 7.2ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'avatar_link' for Profile.):
+  
+app/controllers/public/registrations_controller.rb:5:in `create'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (139.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Catalog_development"[0m
+  [1m[35m (126.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Catalog_test"[0m
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8540508002675814480)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProfiles (20180613005926)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "provider" character varying DEFAULT 'email' NOT NULL, "uid" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "name" character varying, "email" character varying, "birthday" character varying, "about" character varying, "avatar_link" character varying, "tokens" json, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_profiles_on_email" ON "profiles"  ("email")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_profiles_on_uid_and_provider" ON "profiles"  ("uid", "provider")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180613005926"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAttachments (20180613011206)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "attachments" ("id" bigserial primary key, "file_uid" character varying NOT NULL, "attachable_type" character varying, "attachable_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_attachments_on_attachable_type_and_attachable_id" ON "attachments"  ("attachable_type", "attachable_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180613011206"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSeries (20180613012925)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "series" ("id" bigserial primary key, "title" character varying NOT NULL, "about" character varying, "launch_date" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_series_on_title" ON "series"  ("title")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180613012925"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateSeasons (20180613014000)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "seasons" ("id" bigserial primary key, "serie_id" bigint, "season_number" integer NOT NULL, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_seasons_on_serie_id" ON "seasons"  ("serie_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_seasons_on_season_number" ON "seasons"  ("season_number")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180613014000"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvaluations (20180613015327)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "evaluations" ("id" bigserial primary key, "serie_id" bigint, "profile_id" bigint, "rating" integer, "comment" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_evaluations_on_serie_id" ON "evaluations"  ("serie_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_evaluations_on_profile_id" ON "evaluations"  ("profile_id")[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180613015327"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateViewers (20180613020913)
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "viewers" ("id" bigserial primary key, "serie_id" bigint, "profile_id" bigint, "status" character varying DEFAULT 'watching' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_viewers_on_serie_id" ON "viewers"  ("serie_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_viewers_on_profile_id" ON "viewers"  ("profile_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_viewers_on_status" ON "viewers"  ("status")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180613020913"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEpisodes (20180614011638)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "episodes" ("id" bigserial primary key, "title" character varying, "episode_number" integer NOT NULL, "season_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_episodes_on_title" ON "episodes"  ("title")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_episodes_on_episode_number" ON "episodes"  ("episode_number")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_episodes_on_season_id" ON "episodes"  ("season_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180614011638"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProgresses (20180614011659)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "progresses" ("id" bigserial primary key, "viewer_id" bigint, "episode_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_progresses_on_viewer_id" ON "progresses"  ("viewer_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_progresses_on_episode_id" ON "progresses"  ("episode_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180614011659"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-13 02:15:53.599561"], ["updated_at", "2018-07-13 02:15:53.599561"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8540508002675814480)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/public/registrations" for 127.0.0.1 at 2018-07-12 23:16:05 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Public::RegistrationsController#create as JSON
+  Parameters: {"profile"=>{"birthday"=>"02/02/1980", "about"=>"Lorem ipsum dolor sit amet.", "name"=>"Ryan Douglas", "email"=>"ryan.douglas11@example.com", "avatar_link"=>"https://randomuser.me/api/portraits/men/41.jpg", "password"=>"[FILTERED]"}, "registration"=>{"profile"=>{"birthday"=>"02/02/1980", "about"=>"Lorem ipsum dolor sit amet.", "name"=>"Ryan Douglas", "email"=>"ryan.douglas11@example.com", "avatar_link"=>"https://randomuser.me/api/portraits/men/41.jpg", "password"=>"[FILTERED]"}}}
+Unpermitted parameter: :password
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfile Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."email" = $1 AND "profiles"."provider" = $2 LIMIT $3[0m  [["email", "ryan.douglas11@example.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mProfile Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE LOWER("profiles"."email") = LOWER($1) LIMIT $2[0m  [["email", "ryan.douglas11@example.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 124ms (Views: 0.5ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/public/registrations" for 127.0.0.1 at 2018-07-12 23:16:48 -0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Public::RegistrationsController#create as JSON
+  Parameters: {"profile"=>{"birthday"=>"02/02/1980", "about"=>"Lorem ipsum dolor sit amet.", "name"=>"Ryan Douglas", "email"=>"ryan.douglas11@example.com", "avatar_link"=>"https://randomuser.me/api/portraits/men/41.jpg", "password"=>"[FILTERED]"}, "registration"=>{"profile"=>{"birthday"=>"02/02/1980", "about"=>"Lorem ipsum dolor sit amet.", "name"=>"Ryan Douglas", "email"=>"ryan.douglas11@example.com", "avatar_link"=>"https://randomuser.me/api/portraits/men/41.jpg", "password"=>"[FILTERED]"}}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mProfile Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE "profiles"."email" = $1 AND "profiles"."provider" = $2 LIMIT $3[0m  [["email", "ryan.douglas11@example.com"], ["provider", "email"], ["LIMIT", 1]]
+  [1m[36mProfile Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "profiles" WHERE LOWER("profiles"."email") = LOWER($1) LIMIT $2[0m  [["email", "ryan.douglas11@example.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "profiles" ("uid", "encrypted_password", "name", "email", "birthday", "about", "avatar_link", "tokens", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["uid", "ryan.douglas11@example.com"], ["encrypted_password", "$2a$11$yUjm2S8.ZBZpo7.O116tu.4T0me1Lp9UfxcuLJXONLoIvw901.ePm"], ["name", "Ryan Douglas"], ["email", "ryan.douglas11@example.com"], ["birthday", "02/02/1980"], ["about", "Lorem ipsum dolor sit amet."], ["avatar_link", "https://randomuser.me/api/portraits/men/41.jpg"], ["tokens", "{}"], ["created_at", "2018-07-13 02:16:49.347011"], ["updated_at", "2018-07-13 02:16:49.347011"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 225ms (Views: 0.2ms | ActiveRecord: 13.4ms)
+
+
+Started POST "/public/authenticate" for 127.0.0.1 at 2018-07-12 23:17:10 -0300
+Processing by Public::AuthenticatesController#create as JSON
+  Parameters: {"email"=>"ryan.douglas11@example.com", "password"=>"[FILTERED]", "authenticate"=>{"email"=>"ryan.douglas11@example.com", "password"=>"[FILTERED]"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: profile):
+  
+app/controllers/public/authenticates_controller.rb:25:in `profile_params'
+app/controllers/public/authenticates_controller.rb:14:in `find_profile'
+Started POST "/public/authenticate" for 127.0.0.1 at 2018-07-12 23:17:46 -0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Public::AuthenticatesController#create as JSON
+  Parameters: {"email"=>"ryan.douglas11@example.com", "password"=>"[FILTERED]", "authenticate"=>{"email"=>"ryan.douglas11@example.com", "password"=>"[FILTERED]"}}
+Unpermitted parameters: :format, :authenticate
+  [1m[36mProfile Load (1.5ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."email" = $1 ORDER BY "profiles"."id" ASC LIMIT $2[0m  [["email", "ryan.douglas11@example.com"], ["LIMIT", 1]]
+Unpermitted parameters: :format, :authenticate
+Completed 200 OK in 219ms (Views: 0.3ms | ActiveRecord: 11.7ms)
+
+

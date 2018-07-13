@@ -39,6 +39,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string :email
       t.string :birthday
       t.string :about
+      t.string :avatar_link
 
       ## Tokens
       t.json :tokens

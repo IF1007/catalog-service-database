@@ -11,6 +11,7 @@ class Profile < ApplicationRecord
   has_many :viewers
   has_many :evaluations
 
-  validates :user_id, presence: true, uniqueness: true
   validates :name, presence: true
+  validates :password, presence: true, length: { in: 6..20 }, on: :create
+  validates_uniqueness_of :email, case_sensitive: false
 end
