@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180709225559) do
+ActiveRecord::Schema.define(version: 20180614011659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,24 +37,28 @@ ActiveRecord::Schema.define(version: 20180709225559) do
 
   create_table "evaluations", force: :cascade do |t|
     t.bigint "serie_id"
-    t.string "user_id", null: false
+    t.bigint "profile_id"
     t.integer "rating"
     t.string "comment", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_evaluations_on_profile_id"
     t.index ["serie_id"], name: "index_evaluations_on_serie_id"
-    t.index ["user_id"], name: "index_evaluations_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "user_id", null: false
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "name"
+    t.string "email"
     t.string "birthday"
     t.string "about"
+    t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
-    t.string "avatar_link"
-    t.index ["user_id"], name: "index_profiles_on_user_id"
+    t.index ["email"], name: "index_profiles_on_email", unique: true
+    t.index ["uid", "provider"], name: "index_profiles_on_uid_and_provider", unique: true
   end
 
   create_table "progresses", force: :cascade do |t|
@@ -87,13 +91,13 @@ ActiveRecord::Schema.define(version: 20180709225559) do
 
   create_table "viewers", force: :cascade do |t|
     t.bigint "serie_id"
-    t.string "user_id", null: false
+    t.bigint "profile_id"
     t.string "status", default: "watching", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_viewers_on_profile_id"
     t.index ["serie_id"], name: "index_viewers_on_serie_id"
     t.index ["status"], name: "index_viewers_on_status"
-    t.index ["user_id"], name: "index_viewers_on_user_id"
   end
 
 end

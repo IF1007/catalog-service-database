@@ -1,4 +1,4 @@
-class DeviseTokenAuthCreateProfiles < ActiveRecord::Migration[5.1]
+class CreateProfiles < ActiveRecord::Migration[5.1]
   def change
     create_table(:profiles) do |t|
       ## Required

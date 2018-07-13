@@ -1,5 +1,6 @@
 class Evaluation < ApplicationRecord
   belongs_to :serie
+  belongs_to :profile
   
-  validates :comment, :user_id, presence: true
+  validates :comment, presence: true
 end
