@@ -6727,3 +6727,95 @@ Processing by Api::SeriesController#index as JSON
 Completed 200 OK in 24ms (Views: 11.3ms | ActiveRecord: 3.8ms)
 
 
+  [1m[36mSerie Load (4.2ms)[0m  [1m[34mSELECT  "series".* FROM "series" ORDER BY "series"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSerie Load (0.5ms)[0m  [1m[34mSELECT  "series".* FROM "series" ORDER BY "series"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSeason Load (5.8ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."serie_id" = $1 LIMIT $2[0m  [["serie_id", 1], ["LIMIT", 11]]
+  [1m[36mSerie Load (0.6ms)[0m  [1m[34mSELECT  "series".* FROM "series" ORDER BY "series"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "seasons" WHERE "seasons"."serie_id" = $1[0m  [["serie_id", 1]]
+  [1m[36mSerie Load (0.4ms)[0m  [1m[34mSELECT  "series".* FROM "series" ORDER BY "series"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSeason Load (0.5ms)[0m  [1m[34mSELECT  "seasons".* FROM "seasons" WHERE "seasons"."serie_id" = $1 LIMIT $2[0m  [["serie_id", 1], ["LIMIT", 11]]
+  [1m[36mSerie Load (0.5ms)[0m  [1m[34mSELECT  "series".* FROM "series" ORDER BY "series"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSeason Load (0.4ms)[0m  [1m[34mSELECT "seasons".* FROM "seasons" WHERE "seasons"."serie_id" = $1[0m  [["serie_id", 1]]
+  [1m[36mSerie Load (0.6ms)[0m  [1m[34mSELECT  "series".* FROM "series" ORDER BY "series"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSerie Load (0.6ms)[0m  [1m[34mSELECT  "series".* FROM "series" ORDER BY "series"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSeason Load (0.6ms)[0m  [1m[34mSELECT "seasons".* FROM "seasons" WHERE "seasons"."serie_id" = $1[0m  [["serie_id", 1]]
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "episodes" WHERE "episodes"."season_id" = $1[0m  [["season_id", 1]]
+  [1m[36mSerie Load (0.3ms)[0m  [1m[34mSELECT  "series".* FROM "series" ORDER BY "series"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSeason Load (0.6ms)[0m  [1m[34mSELECT "seasons".* FROM "seasons" WHERE "seasons"."serie_id" = $1[0m  [["serie_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "episodes" WHERE "episodes"."season_id" = $1[0m  [["season_id", 1]]
+  [1m[36mSerie Load (0.7ms)[0m  [1m[34mSELECT  "series".* FROM "series" ORDER BY "series"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mViewer Load (3.2ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."serie_id" = $1 AND "viewers"."profile_id" = $2 ORDER BY "viewers"."id" ASC LIMIT $3[0m  [["serie_id", 1], ["profile_id", 1], ["LIMIT", 1]]
+Started GET "/api/series/1" for 127.0.0.1 at 2018-07-16 15:46:57 -0300
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SeriesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (3.7ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (0.6ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/series/show.json.jbuilder
+  Rendered api/series/show.json.jbuilder (51.6ms)
+Completed 500 Internal Server Error in 216ms (ActiveRecord: 21.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `poster_link' for #<Serie:0x007fbe299a9d38>):
+    1: json.serie do
+    2:   json.extract! @serie, :id, :title, :launch_date, :about, :poster_link
+    3:   json.seasons_count @serie.seasons.count
+    4:   json.episodes_count @serie.episodes_count
+    5:   json.viewer_status if @viewer.present? ? @viewer.status : ""
+  
+app/views/api/series/show.json.jbuilder:2:in `block in _app_views_api_series_show_json_jbuilder__735657120487570122_70227370546760'
+app/views/api/series/show.json.jbuilder:1:in `_app_views_api_series_show_json_jbuilder__735657120487570122_70227370546760'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8540508002675814480)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(8540508002675814480)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/series/1" for 127.0.0.1 at 2018-07-16 15:47:26 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SeriesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.8ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSerie Load (0.8ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/series/show.json.jbuilder
+  Rendered api/series/show.json.jbuilder (35.4ms)
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 17.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `poster_link' for #<Serie:0x007fdf1be4dd18>):
+    1: json.serie do
+    2:   json.extract! @serie, :id, :title, :launch_date, :about, :poster_link
+    3:   json.seasons_count @serie.seasons.count
+    4:   json.episodes_count @serie.episodes_count
+    5:   json.viewer_status if @viewer.present? ? @viewer.status : ""
+  
+app/views/api/series/show.json.jbuilder:2:in `block in _app_views_api_series_show_json_jbuilder__4482319854867364663_70298117971840'
+app/views/api/series/show.json.jbuilder:1:in `_app_views_api_series_show_json_jbuilder__4482319854867364663_70298117971840'
+Started GET "/api/historic" for 127.0.0.1 at 2018-07-16 18:59:43 -0300
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::HistoricsController#show as JSON
+  [1m[36mProfile Load (12.9ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/historics/show.json.jbuilder
+  [1m[36mViewer Load (15.5ms)[0m  [1m[34mSELECT  "viewers".* FROM "viewers" WHERE "viewers"."profile_id" = 1 ORDER BY "viewers"."id" DESC LIMIT $1[0m  [["LIMIT", 3]]
+  [1m[36mSerie Load (1.0ms)[0m  [1m[34mSELECT  "series".* FROM "series" WHERE "series"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/historics/show.json.jbuilder (147.3ms)
+Completed 500 Internal Server Error in 424ms (ActiveRecord: 97.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `poster_link' for #<Serie:0x007fb7ee8da6c8>):
+    2:   json.recent @viewers do |viewer|
+    3:     json.extract! viewer, :id, :status
+    4:     json.serie do
+    5:       json.extract! viewer.serie, :id, :title, :about, :launch_date, :poster_link
+    6:     end
+    7:   end
+    8:   json.watching @viewer_watching do |viewer|
+  
+app/views/api/historics/show.json.jbuilder:5:in `block (3 levels) in _app_views_api_historics_show_json_jbuilder___1531005162070717500_70213978806620'
+app/views/api/historics/show.json.jbuilder:4:in `block (2 levels) in _app_views_api_historics_show_json_jbuilder___1531005162070717500_70213978806620'
+app/views/api/historics/show.json.jbuilder:2:in `block in _app_views_api_historics_show_json_jbuilder___1531005162070717500_70213978806620'
+app/views/api/historics/show.json.jbuilder:1:in `_app_views_api_historics_show_json_jbuilder___1531005162070717500_70213978806620'
