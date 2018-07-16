@@ -2,14 +2,14 @@ class Api::ViewersController < Api::ApiController
   before_action :find_serie, only: [:create]
 
   def create
-    @viewer = Viewer.find_or_create_by(viewer_params)
-    @viewer.update(viewer_params)
+    @viewer = Viewer.find_or_create_by!(viewer_params)
+    @viewer.update!(viewer_params)
     render :show, status: :created
   end
 
   protected
   def find_serie
-    Serie.find_by! id: params[:serie_id]
+    Serie.find_by! id: params[:viewer][:serie_id]
   end
 
   def viewer_params
