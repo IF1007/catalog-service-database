@@ -7,6 +7,6 @@ class Api::HistoricsController < Api::ApiController
   protected
   def find_viewer
     @viewers = Viewer.where(profile: @profile).order(id: :desc).limit(3).decorate
-    @viewer_watching = Viewer.where(profile: @profile, status: 'watching')
+    @viewer_watching = Viewer.where(profile: @profile, status: 'watching').decorate
   end
 end

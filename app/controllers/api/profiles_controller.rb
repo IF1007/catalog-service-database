@@ -1,7 +1,7 @@
 class Api::ProfilesController < Api::ApiController
   def show
-    @later = Viewer.where(profile: @profile, status: 'watch_later')
-    @finished = Viewer.where(profile: @profile, status: 'watched')
+    @later = Viewer.where(profile: @profile, status: 'watch_later').decorate
+    @finished = Viewer.where(profile: @profile, status: 'watched').decorate
   end
 
   def update
