@@ -20,6 +20,7 @@ class Api::SeriesController < Api::ApiController
   end
 
   def show
+    @viewer = @serie.viewers.where(profile_id: @profile.id).first
   end
 
   protected
