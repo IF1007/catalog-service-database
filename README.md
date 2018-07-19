@@ -1,5 +1,5 @@
 # Catalog Service Database
-CRUD Service of [catalog service](https://github.com/ahlp/catalog-service) in Ruby
+CRUD Service of [catalog service](https://github.com/IF1007/catalog-service) in Ruby
 
 # How To Build
 
